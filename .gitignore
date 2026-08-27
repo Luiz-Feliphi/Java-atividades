@@ -2,7 +2,10 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+/src/pack_jv
 .kotlin
+.idea/libraries/iText_Core_9_7_1_only_jars.xml
+projetinho-java-2periodo.iml
 
 ### Eclipse ###
 .apt_generated
