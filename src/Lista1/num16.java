@@ -9,8 +9,8 @@ public class num16 {
         System.out.println("Palavra: ");
         String palavra = leia.nextLine();
         int vogalQtn =0;
-        for (int i = 0; i <= palavra.length(); i++) {
-            for (int j = 0; j <= vocais.length; j++) {
+        for (int i = 0; i < palavra.length(); i++) {
+            for (int j = 0; j < vocais.length; j++) {
                 if (palavra.charAt(i) == vocais[j]) vogalQtn++;
             }
         }
