@@ -1,9 +1,11 @@
 package Treinos;
+import Treinos.TreinoRoma;
 
 public class Treino1 {
     public static void main(String[] args) {
-        for (int i = 0; i <= 9999 ; i++) {
-            // a terminar
-        }
+        TreinoRoma fato = new TreinoRoma();
+
+        int facto = fato.FactorText("roma");
+        System.out.println(facto);
     }
 }
