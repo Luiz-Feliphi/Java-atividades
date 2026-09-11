@@ -23,7 +23,7 @@ public class num4 {
             System.out.println("Pi aproximado: " + piAtual);
             if (piAtual-piAnterior == 0.05){
                 fim=!fim;
-                System.out.print(piAtual-piAnterior);grughrugurfkkf
+                System.out.print(piAtual-piAnterior);
             }
 
         }
