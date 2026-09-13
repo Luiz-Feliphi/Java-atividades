@@ -1,31 +1,30 @@
 package Lista2;
 
+import java.util.Scanner;
+
 public class num4 {
     public static void main(String[] args) {
-       // double piAproximado = 0.0;
-        double denominador = 1.0;
-        boolean somar = true;
-        boolean fim = true;
-        double piAtual =0.0;
-        double piAnterior=0.0;
-        System.out.println("Calculando Pi infinitamente. Pressione Ctrl+C para parar.");
-        while (fim) {
-            if (somar) {
-                piAtual += (4.0 / denominador);
-                //piAproximado = piAtual;
-            } else {
-                piAtual -= (4.0 / denominador);
-                piAnterior = piAtual;
+        Scanner leia = new Scanner(System.in);
+        System.out.print("Valor da sua sequencia: ");
+        double SequenciaNum = leia.nextDouble();
+        double ResultSequenciaNum = CalculoDeSequencia(SequenciaNum);
+        System.out.println("Resultado da sequencia dos 40 primeiros numeros: "+ResultSequenciaNum);
+    }
 
-            }
-            somar = !somar;
-            denominador += 2.0;
-            System.out.println("Pi aproximado: " + piAtual);
-            if (piAtual-piAnterior == 0.05){
-                fim=!fim;
-                System.out.print(piAtual-piAnterior);
-            }
-
+    private static double CalculoDeSequencia(double A) {
+        double denominador=3;
+        /*  ^^
+            ||
+            havia antes colocado como int a variavel, e o resultado dava infinito por algum caralho de motivo, mas parece que com double
+            ele funciona pra mim isso não faz sentido sendo que ele é uma variavel int e sua unica função é se dobra de valor pra formula.
+        */
+        double soma=0;
+        for (int i = 1; i <= 40; i++) {
+            double ResultSequencia = (7*A)/denominador;
+            soma += ResultSequencia;
+            denominador *=2;//<= por algum motivo posicionar ele na parte de baixo faz diferença
         }
+        //sobre duvidas pergunta cristiane
+        return soma;
     }
 }
