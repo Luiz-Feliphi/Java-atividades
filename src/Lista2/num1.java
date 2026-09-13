@@ -11,7 +11,7 @@ public class num1 {
         boolean erro=false;
         do{
             try {
-                int numero = Integer.parseInt(numTexto);
+                //int numero = Integer.parseInt(numTexto);
                 int Result = SeparaNumero(numTexto);
                 System.out.println(Result);
             } catch (NumberFormatException e) {
@@ -19,6 +19,7 @@ public class num1 {
                 erro=true;
             }
         }while (erro);
+        leia.close();
     }
     private static int SeparaNumero(String NumTexto){
         int Result =0;
