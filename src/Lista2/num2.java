@@ -10,7 +10,6 @@ public class num2 {
         int ResultSequencia = CalculoSequencia(sequencia);
         System.out.println("Resultado final: "+ResultSequencia);
     }
-
     private static int CalculoSequencia(int NumRecebi) {
        int somar=0;
         for (int i = 0; i <= NumRecebi ; i++) {
