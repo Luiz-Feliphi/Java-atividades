@@ -23,20 +23,28 @@ public class num1 {
     }
     private static void imprimirZigZag(int[][] matriz) {
 
+        // Zig-zag da figura: percorre as diagonais (onde i + j = soma) alternando o sentido.
+        // soma par  -> sobe (de baixo para cima)
+        // soma impar -> desce (de cima para baixo)
         System.out.println("\nMatriz em Zig-Zag:");
 
-        for (int i = 0; i < matriz.length; i++) {
+        int N = matriz.length;
+        int M = matriz[0].length;
 
-            if (i % 2 == 0) {
+        for (int soma = 0; soma <= N + M - 2; soma++) {
 
-                for (int j = 0; j < matriz[0].length; j++) {
-                    System.out.print(matriz[i][j] + " ");
+            if (soma % 2 == 0) {
+
+                // sobe: a linha vai diminuindo
+                for (int i = Math.min(soma, N - 1); i >= 0 && soma - i < M; i--) {
+                    System.out.print(matriz[i][soma - i] + " ");
                 }
 
             } else {
 
-                for (int j = matriz[0].length - 1; j >= 0; j--) {
-                    System.out.print(matriz[i][j] + " ");
+                // desce: a linha vai aumentando
+                for (int i = Math.max(0, soma - (M - 1)); i < N && i <= soma; i++) {
+                    System.out.print(matriz[i][soma - i] + " ");
                 }
             }
         }
@@ -78,12 +86,25 @@ public class num1 {
             System.out.println("Elemento nao encontrado.");
         }
     }
-    private static void imprimirDiagonalPrincipal(int[][] matriz) {
+    private static void imprimirDiagonais(int[][] matriz) {
+
+        int N = matriz.length;
+        int M = matriz[0].length;
+        int menor = Math.min(N, M);
 
         System.out.print("Diagonal principal: ");
 
-        for (int i = 0; i < Math.min(matriz.length, matriz[0].length); i++) {
+        for (int i = 0; i < menor; i++) {
             System.out.print(matriz[i][i] + " ");
+        }
+
+        System.out.println();
+
+        // diagonal secundaria: começa no canto superior direito e vai para baixo/esquerda
+        System.out.print("Diagonal secundaria: ");
+
+        for (int i = 0; i < menor; i++) {
+            System.out.print(matriz[i][M - 1 - i] + " ");
         }
 
         System.out.println();
@@ -150,7 +171,7 @@ public class num1 {
                     break;
 
                 case 3:
-                    imprimirDiagonalPrincipal(matriz);
+                    imprimirDiagonais(matriz);
                     break;
 
                 case 4:
